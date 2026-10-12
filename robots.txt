@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://glintstack.co.za/sitemap.xml

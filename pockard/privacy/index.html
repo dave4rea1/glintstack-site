@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pockard Privacy Policy — Glintstack</title>
+<meta name="description" content="How Pockard, the loyalty card wallet by Glintstack, handles your information. Plain English, POPIA-compliant, no tracking.">
+<link rel="canonical" href="https://glintstack.co.za/pockard/privacy/">
+<meta name="theme-color" content="#F7F2E9">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="/" aria-label="Glintstack home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="9" width="38" height="8" rx="4" fill="none" stroke="currentColor" stroke-opacity=".55" stroke-width="2.6"/><rect x="16" y="23" width="30" height="8" rx="4" fill="none" stroke="currentColor" stroke-opacity=".55" stroke-width="2.6"/><rect x="8" y="37" width="46" height="8" rx="4" fill="none" stroke="currentColor" stroke-opacity=".55" stroke-width="2.6"/><rect x="20" y="51" width="30" height="8" rx="4" fill="#E9A23B"/></svg>
+      <span class="word">Glintstack</span>
+    </a>
+    <ul><li><a class="btn-sm" href="mailto:hello@glintstack.co.za">Contact us</a></li></ul>
+  </nav>
+</header>
+
+<main id="main" class="doc">
+  <div class="wrap narrow">
+    <p class="crumb"><a href="/">Glintstack</a> / <a href="/#pockard">Pockard</a> / Privacy policy</p>
+    <h1>Pockard Privacy Policy</h1>
+    <p class="meta">Effective 13 October 2026 · Applies to the Pockard app for Android and iOS</p>
+
+    <div class="summary">
+      <span class="hand">the short version</span>
+      <ul>
+        <li><strong>No account is needed.</strong> If you never sign in, your cards stay on your phone and nothing about you is sent to us.</li>
+        <li><strong>Your card numbers and notes are encrypted.</strong> On your phone, and before they ever reach our servers. We can't read them.</li>
+        <li><strong>No analytics, no ads, no tracking.</strong> We don't sell or share your data with anyone.</li>
+        <li><strong>You can export or delete everything</strong>, at any time, from inside the app.</li>
+      </ul>
+    </div>
+
+    <h2>1. Who we are</h2>
+    <p>Pockard is made by <strong>Glintstack (Pty) Ltd</strong>, a software company based in Cape Town, South Africa ("Glintstack", "we", "us"). We are the responsible party for your personal information under the Protection of Personal Information Act, 2013 (POPIA).</p>
+    <p>Questions about this policy, or requests about your information, go to our Information Officer at <a href="mailto:hello@glintstack.co.za?subject=Pockard%20privacy">hello@glintstack.co.za</a>.</p>
+
+    <h2>2. Using Pockard without an account</h2>
+    <p>This is how Pockard works by default, and it works fully offline. In this mode we receive <strong>nothing</strong> from you. The app stores the following <strong>on your device only</strong>:</p>
+    <ul>
+      <li><strong>Your loyalty cards</strong>: the name you give each card, the store it belongs to, the card number, the barcode format, the colour, the category, any notes you add, whether it's a favourite or archived, and when you last opened it. These are kept in a database encrypted with AES-256 (SQLCipher). The key is held in your phone's secure storage.</li>
+      <li><strong>App settings</strong>: your theme, whether biometric lock is on, and whether you've finished onboarding.</li>
+      <li><strong>A random install ID</strong>: a random identifier created on your phone. It isn't linked to your name or to your device's hardware IDs, and it's only used when you share a card (see section 4).</li>
+      <li><strong>A history of cards you've shared</strong>: which card was shared and when. It stays on your phone.</li>
+    </ul>
+    <h3>Camera, photos and biometrics</h3>
+    <ul>
+      <li><strong>Camera.</strong> Pockard uses the camera only to scan a card's barcode. Scanning happens entirely on your phone. Camera images aren't saved or uploaded.</li>
+      <li><strong>Photos.</strong> If you add a card from a photo, you choose the image with your phone's photo picker. Pockard reads the barcode from it on your phone. The image isn't copied, stored or uploaded.</li>
+      <li><strong>Fingerprint / face unlock.</strong> Your phone's operating system handles this. Pockard only learns whether the check passed. We never receive any biometric data.</li>
+    </ul>
+
+    <h2>3. If you choose to sign in</h2>
+    <p>Signing in is optional. It turns on cloud backup and lets you keep your cards in step across your devices. Before your account is created, we ask for your consent. When you sign in, we process:</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Information</th><th>Readable by us?</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Your email address and an account ID</td><td>Yes</td><td>To create your account and sign you in</td></tr>
+        <tr><td>Card numbers and notes</td><td><strong>No</strong>, encrypted on your phone before upload</td><td>So your cards can be restored and synced</td></tr>
+        <tr><td>Card display details: name, store, barcode format, colour, category, favourite/archived status, sort order, when the card was last opened, and when it was created and changed</td><td>Yes</td><td>So sync can put the right cards in the right order on each of your devices</td></tr>
+        <tr><td>Cloud backup of your whole wallet</td><td><strong>No</strong>, encrypted on your phone. We can see only the number of cards and the backup's size</td><td>So you can restore your wallet on a new phone</td></tr>
+        <tr><td>Recovery key backup (if you create a recovery key)</td><td><strong>No</strong>. It's an encrypted copy of your card key that only your recovery key can unlock, and we never see the recovery key itself</td><td>So a new phone can unlock your cards</td></tr>
+        <tr><td>The date and version of the privacy policy you accepted</td><td>Yes</td><td>POPIA requires us to be able to show you consented</td></tr>
+        <tr><td>Account tier</td><td>Yes</td><td>Reserved for any paid features in future. Today Pockard is free for everyone and this is the same for every account</td></tr>
+      </tbody>
+    </table></div>
+    <h3>How you sign in</h3>
+    <p>You can sign in with a <strong>one-time link sent to your email</strong>, or with <strong>Google</strong> or <strong>Apple</strong>. If you use Google or Apple, that company confirms who you are and shares your email address with us. Their own privacy policies cover what they process. We never see your Google or Apple password.</p>
+    <p>Pockard is free. There are no in-app purchases and no subscriptions, and we hold no payment information of any kind.</p>
+
+    <h2>4. Sharing a card</h2>
+    <p>When you share a card, Pockard creates a link <strong>on your phone</strong>. The link carries the card's name, number, barcode format, store, notes, the time it was shared and your random install ID, all encrypted. The decryption key sits in the part of the link after the <code>#</code>, which web browsers never send to any server.</p>
+    <ul>
+      <li>Shared cards aren't stored on our servers. The link itself carries the card.</li>
+      <li><strong>Anyone who has the full link can add that card</strong>, including the number and notes. Share it only with people you trust.</li>
+      <li>Once you've sent a link, it can't be recalled. Removing it from your share history in the app doesn't stop someone who already has it.</li>
+      <li>If someone opens the link in a web browser, the encrypted part may reach the web server for pockard.app. That server can't decrypt it.</li>
+    </ul>
+
+    <h2>5. Technical information</h2>
+    <p>When the app talks to our servers (only if you sign in), our hosting provider handles the usual technical details of each request: your IP address, the time, and the type of request. These are used to deliver the service, keep it secure and prevent abuse, such as by limiting how often a request can be made. They're kept in logs that are cleared routinely. We don't use them to build a profile of you.</p>
+
+    <h2>6. What we never do</h2>
+    <ul>
+      <li>We don't collect analytics or crash reports. Pockard contains no analytics SDK, no crash-reporting SDK and no advertising SDK.</li>
+      <li>We don't access your location, contacts, call logs, SMS or browsing history.</li>
+      <li>We don't sell, rent or trade your information, or use it for advertising.</li>
+      <li>We don't store card numbers or notes unencrypted on our servers.</li>
+    </ul>
+    <p>If we ever add crash reporting or analytics, we will update this policy first and ask you to accept the new version in the app before it takes effect.</p>
+
+    <h2>7. Our legal grounds</h2>
+    <p>We process information only when POPIA allows it:</p>
+    <ul>
+      <li><strong>Consent</strong>: for creating your account and storing your cards in the cloud. You can withdraw it at any time by deleting your account.</li>
+      <li><strong>To provide the service you asked for</strong>: backup, sync and sign-in.</li>
+      <li><strong>Our legitimate interest</strong> in keeping the service secure and preventing abuse (section 5).</li>
+    </ul>
+
+    <h2>8. Who else is involved</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Provider</th><th>What they do</th><th>Where</th></tr></thead>
+      <tbody>
+        <tr><td>Supabase, Inc.</td><td>Hosts our database, sign-in and server functions, and sends the email sign-in links</td><td>Data stored in Zurich, Switzerland (Amazon Web Services)</td></tr>
+        <tr><td>Google or Apple</td><td>Confirms your identity, only if you choose to sign in with them</td><td>Under their own policies</td></tr>
+        <tr><td>Google Play / Apple App Store</td><td>Distributes the app and updates</td><td>Under their own policies</td></tr>
+      </tbody>
+    </table></div>
+    <p>Supabase processes your information only on our instructions, under a data processing agreement.</p>
+
+    <h2>9. Information stored outside South Africa</h2>
+    <p>If you sign in, your account information is stored in Switzerland. POPIA (section 72) allows this transfer because Switzerland has data protection law that gives you comparable protection, and our hosting provider is contractually bound to protect your information. Your card numbers and notes are encrypted on your phone before they leave it, so they can't be read where they're stored, not even by us.</p>
+
+    <h2>10. How we keep it safe</h2>
+    <ul>
+      <li>Cards on your phone are kept in an AES-256 encrypted database, and the key sits in your phone's secure storage.</li>
+      <li>Card numbers, notes and backups are encrypted with AES-256-GCM on your phone before upload, using a key we never hold.</li>
+      <li>Recovery keys are protected with Argon2id, a slow password-hashing method designed to resist guessing.</li>
+      <li>All traffic to our servers is encrypted in transit (HTTPS).</li>
+      <li>Database rules make sure each account can reach only its own records.</li>
+    </ul>
+    <p>No system is perfectly secure. If we discover a breach that affects your information, we will notify you and the Information Regulator as POPIA requires.</p>
+
+    <h2>11. How long we keep it</h2>
+    <ul>
+      <li><strong>Cards on your phone</strong>: until you delete them, use <em>Delete all my data</em>, or uninstall the app.</li>
+      <li><strong>Your account, synced cards and backup</strong>: until you delete them or your account. We keep one backup per account, and each new backup replaces the last.</li>
+      <li><strong>Deleted cards</strong>: when you delete a synced card, a small deletion marker with no card number is kept so your other devices remove it too. Markers are purged after 30 days.</li>
+      <li><strong>Account deletion</strong>: removes your account, email address, synced cards, backup, recovery key backup and consent record from our servers immediately and permanently.</li>
+    </ul>
+
+    <h2>12. Your rights</h2>
+    <p>Under POPIA you can, at any time, without asking us first:</p>
+    <ul>
+      <li><strong>See your information</strong>: in the app, go to <em>Settings → My data → Export my cards</em> to download it as a file. Or email us for a copy of what we hold about your account.</li>
+      <li><strong>Correct it</strong>: edit any card directly in the app, or email us.</li>
+      <li><strong>Delete it</strong>: in the app, go to <em>Settings → My data → Delete all my data</em>. If you no longer have the app, follow the steps on our <a href="/pockard/delete-account/">account deletion page</a>.</li>
+      <li><strong>Object or withdraw consent</strong>: sign out and delete your account, or email us.</li>
+      <li><strong>Complain</strong> to the Information Regulator of South Africa at <a href="https://inforegulator.org.za" rel="noopener">inforegulator.org.za</a>. We'd appreciate the chance to fix things first, but you don't have to come to us first.</li>
+    </ul>
+    <p>We respond to emailed requests within 7 days.</p>
+
+    <h2>13. Children</h2>
+    <p>Pockard isn't aimed at children. You can use it without an account at any age, because nothing is sent to us. Anyone under 18 should have a parent or guardian's permission before creating an account. If you believe a child has created an account without that permission, email us and we'll delete it.</p>
+
+    <h2>14. Changes to this policy</h2>
+    <p>If we change this policy in a way that matters, we'll show you the new version in the app and ask you to accept it before you continue. The effective date at the top always shows the current version.</p>
+
+    <h2>15. Contact</h2>
+    <p><strong>Information Officer</strong>, Glintstack (Pty) Ltd, Cape Town, South Africa<br>
+    <a href="mailto:hello@glintstack.co.za?subject=Pockard%20privacy">hello@glintstack.co.za</a></p>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="legal" style="margin-top:0;border-top:0;padding-top:0">
+      <span>© 2026 Glintstack (Pty) Ltd · <a href="/" style="color:inherit">glintstack.co.za</a></span>
+      <span><a href="/pockard/delete-account/" style="color:inherit">Delete your Pockard account</a></span>
+    </div>
+  </div>
+</footer>
+<script>
+  var h = document.querySelector('.site-header');
+  addEventListener('scroll', function () { h.classList.toggle('scrolled', scrollY > 8); }, { passive: true });
+</script>
+</body>
+</html>

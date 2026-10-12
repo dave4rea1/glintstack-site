@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Glintstack — A small software company in Cape Town</title>
+<meta name="description" content="Glintstack builds careful, privacy-first software for the everyday problems others overlook — one solid layer at a time.">
+<link rel="canonical" href="https://glintstack.co.za/">
+<meta name="theme-color" content="#F7F2E9">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Glintstack">
+<meta property="og:title" content="Glintstack — A small software company in Cape Town">
+<meta property="og:description" content="Careful, privacy-first software for everyday problems — one solid layer at a time.">
+<meta property="og:url" content="https://glintstack.co.za/">
+<meta property="og:locale" content="en_ZA">
+<meta name="twitter:card" content="summary">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Glintstack",
+  "legalName": "Glintstack (Pty) Ltd",
+  "url": "https://glintstack.co.za/",
+  "logo": "https://glintstack.co.za/favicon.svg",
+  "email": "hello@glintstack.co.za",
+  "address": { "@type": "PostalAddress", "addressLocality": "Cape Town", "addressCountry": "ZA" }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+
+<style>
+  /* ---------- hero ---------- */
+  .hero { position: relative; padding: 88px 0 120px; overflow: hidden; }
+  .hero-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
+  @media (max-width: 880px) { .hero-grid { grid-template-columns: 1fr; } .hero { padding: 56px 0 88px; } }
+  h1 {
+    font-family: var(--serif); font-weight: 500; font-size: clamp(42px, 6.4vw, 76px);
+    line-height: 1.04; letter-spacing: -0.018em; margin: 0 0 28px; max-width: 13ch;
+    font-variation-settings: 'opsz' 144;
+  }
+  h1 em { font-style: italic; color: var(--clay); }
+  .glint { position: relative; display: inline-block; }
+  .glint svg.underline { position: absolute; left: -4%; bottom: -0.08em; width: 108%; height: 0.32em; overflow: visible; }
+  .glint svg.underline path { stroke: var(--glint); stroke-width: 6; fill: none; stroke-linecap: round; stroke-dasharray: 320; stroke-dashoffset: 320; animation: draw 1.2s var(--ease) .6s forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  .sub { font-size: 19px; line-height: 1.65; color: var(--ink-soft); max-width: 44ch; margin: 0 0 36px; }
+  .cta-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+
+  /* hero art: hand-stacked layers with notes */
+  .art { position: relative; height: 420px; }
+  @media (max-width: 880px) { .art { height: 330px; max-width: 420px; } }
+  .slab {
+    position: absolute; left: 50%; height: 62px; border-radius: 14px;
+    border: 1.5px solid var(--ink); background: var(--card);
+    box-shadow: 0 10px 0 -2px rgba(31,27,45,0.08);
+    transform: translateX(-50%) rotate(var(--r));
+    animation: drop .9s var(--ease) both; animation-delay: var(--d);
+  }
+  .slab.s1 { width: 78%; bottom: 40px; --r: -1.2deg; --d: .1s; background: var(--paper-2); }
+  .slab.s2 { width: 66%; bottom: 112px; --r: 1.6deg; --d: .25s; margin-left: 14px; }
+  .slab.s3 { width: 72%; bottom: 184px; --r: -0.8deg; --d: .4s; margin-left: -10px; background: #E7EDE4; }
+  .slab.s4 { width: 52%; bottom: 256px; --r: 2.2deg; --d: .6s; background: var(--glint); border-color: var(--ink); margin-left: 8px; }
+  @media (max-width: 880px) { .slab { height: 48px; } .slab.s1{bottom:30px} .slab.s2{bottom:86px} .slab.s3{bottom:142px} .slab.s4{bottom:198px} }
+  @keyframes drop { from { opacity: 0; transform: translate(-50%, -60px) rotate(calc(var(--r) * 4)); } to { opacity: 1; transform: translateX(-50%) rotate(var(--r)); } }
+  .slab::after { content: ''; position: absolute; left: 18px; top: 50%; width: 34%; height: 6px; border-radius: 3px; background: rgba(31,27,45,0.14); transform: translateY(-50%); }
+  .slab.s4::after { background: rgba(31,27,45,0.25); }
+  .note { position: absolute; font-family: var(--hand); font-size: 23px; line-height: 1.1; color: var(--clay); }
+  .note svg { position: absolute; width: 54px; height: 40px; }
+  .note.n1 { right: -6px; top: 22px; transform: rotate(4deg); text-align: right; }
+  .note.n1 svg { right: 70px; top: 30px; transform: scaleX(-1) rotate(-10deg); }
+  .note.n2 { left: -8px; bottom: 0; transform: rotate(-3deg); color: var(--ink-soft); font-size: 20px; }
+  @media (max-width: 880px) { .note.n1 { right: 0; top: 0; } }
+
+  /* ---------- section shells ---------- */
+  section { padding: 112px 0; }
+  @media (max-width: 700px) { section { padding: 76px 0; } }
+  .ink { background: var(--ink); color: var(--on-ink); }
+  .paper2 { background: var(--paper-2); }
+  .kicker { font-family: var(--hand); font-size: 26px; color: var(--clay); margin: 0 0 6px; transform: rotate(-1.5deg); display: inline-block; }
+  .ink .kicker { color: var(--glint); }
+  h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(32px, 4.2vw, 50px); line-height: 1.08; letter-spacing: -0.02em; margin: 0 0 22px; max-width: 20ch; }
+  h2 em { font-style: italic; color: var(--clay); }
+  .ink h2 em { color: var(--glint); }
+  .lead { font-size: 18.5px; line-height: 1.7; max-width: 58ch; margin: 0; color: var(--ink-soft); }
+  .ink .lead { color: var(--on-ink-dim); }
+
+  /* ---------- letter ---------- */
+  .letter-grid { display: grid; grid-template-columns: 0.8fr 1.4fr; gap: 64px; align-items: start; }
+  @media (max-width: 880px) { .letter-grid { grid-template-columns: 1fr; gap: 28px; } }
+  .letter {
+    background: var(--card); border: 1px solid var(--line); border-radius: 6px;
+    padding: 44px 48px 40px; position: relative; transform: rotate(-0.6deg);
+    box-shadow: 0 1px 0 rgba(31,27,45,0.04), 0 24px 48px -28px rgba(31,27,45,0.35);
+    background-image: repeating-linear-gradient(180deg, transparent 0 31px, rgba(31,27,45,0.05) 31px 32px);
+    background-position: 0 38px;
+  }
+  @media (max-width: 600px) { .letter { padding: 32px 24px 28px; transform: none; } }
+  .letter::before {
+    content: ''; position: absolute; top: -14px; left: 50%; width: 110px; height: 28px; transform: translateX(-50%) rotate(-2deg);
+    background: rgba(233,162,59,0.55); border-radius: 2px;
+  }
+  .letter p { font-size: 17.5px; line-height: 1.85; margin: 0 0 16px; color: #2E2940; }
+  .letter .hello { font-family: var(--hand); font-size: 34px; color: var(--ink); margin-bottom: 8px; line-height: 1.2; }
+  .letter .sign { font-family: var(--hand); font-size: 30px; color: var(--clay); margin: 22px 0 0; line-height: 1.1; }
+  .letter .sign small { display: block; font-family: var(--sans); font-size: 13px; color: var(--ink-soft); margin-top: 6px; }
+  .facts { list-style: none; padding: 0; margin: 32px 0 0; display: grid; gap: 14px; }
+  .facts li { display: flex; gap: 12px; align-items: baseline; font-size: 15.5px; color: var(--ink-soft); }
+  .facts b { font-family: var(--serif); font-weight: 600; color: var(--ink); font-size: 18px; min-width: 7.5ch; }
+
+  /* ---------- beliefs ---------- */
+  .beliefs { margin-top: 64px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  @media (max-width: 900px) { .beliefs { grid-template-columns: 1fr; } }
+  .belief { border: 1px solid var(--line-light); border-radius: var(--radius); padding: 32px 28px 30px; position: relative; background: rgba(247,242,233,0.03); }
+  .belief .num { font-family: var(--serif); font-style: italic; font-size: 44px; line-height: 1; color: var(--glint); margin-bottom: 18px; }
+  .belief h3 { font-family: var(--serif); font-size: 25px; font-weight: 500; margin: 0 0 10px; letter-spacing: -0.01em; }
+  .belief p { margin: 0; color: var(--on-ink-dim); font-size: 16px; }
+  .belief .aside { display: block; font-family: var(--hand); font-size: 21px; color: var(--glint); margin-top: 16px; transform: rotate(-1.5deg); opacity: .92; }
+
+  /* ---------- process ---------- */
+  .steps { margin-top: 56px; display: grid; gap: 0; counter-reset: s; }
+  .step { display: grid; grid-template-columns: 120px 1fr 1.3fr; gap: 28px; padding: 30px 0; border-top: 1.5px solid var(--ink); align-items: baseline; }
+  .step:last-child { border-bottom: 1.5px solid var(--ink); }
+  .step .k { font-family: var(--hand); font-size: 24px; color: var(--clay); }
+  .step h3 { font-family: var(--serif); font-size: 26px; font-weight: 500; margin: 0; letter-spacing: -0.01em; }
+  .step p { margin: 0; color: var(--ink-soft); }
+  @media (max-width: 780px) { .step { grid-template-columns: 1fr; gap: 6px; } }
+
+  /* ---------- work ---------- */
+  .work { margin-top: 56px; display: grid; grid-template-columns: 1.6fr 1fr; gap: 22px; }
+  @media (max-width: 900px) { .work { grid-template-columns: 1fr; } }
+  .proj { border-radius: 24px; padding: 36px; position: relative; overflow: hidden; }
+  .proj.pockard { background: var(--card); border: 1px solid var(--line); display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: center; }
+  @media (max-width: 640px) { .proj.pockard { grid-template-columns: 1fr; padding: 28px; } }
+  .proj .tag { display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 500; padding: 5px 11px; border-radius: 999px; background: #E7EDE4; color: #36513A; margin-bottom: 16px; }
+  .proj .tag::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--sage); }
+  .proj h3 { font-family: var(--serif); font-size: 36px; font-weight: 500; margin: 0 0 6px; letter-spacing: -0.02em; }
+  .proj .what { font-size: 16px; color: var(--ink); font-weight: 500; margin: 0 0 12px; }
+  .proj p { color: var(--ink-soft); margin: 0 0 18px; font-size: 15.5px; }
+  .proj .links { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; }
+  .proj .links a { color: var(--glint-ink); text-underline-offset: 3px; }
+  .mini-cards { position: relative; height: 210px; }
+  .mc { position: absolute; left: 50%; width: 180px; height: 112px; border-radius: 14px; padding: 14px; color: #fff; font-size: 12px; font-weight: 600; display: flex; flex-direction: column; justify-content: space-between; transition: transform .5s var(--ease); box-shadow: 0 14px 28px -16px rgba(31,27,45,0.5); }
+  .mc i { display: block; height: 22px; border-radius: 3px; background: repeating-linear-gradient(90deg, currentColor 0 2px, transparent 2px 4px, currentColor 4px 5px, transparent 5px 8px); opacity: .45; }
+  .mc.a { background: #1C3FB7; top: 0; transform: translateX(-62%) rotate(-8deg); }
+  .mc.b { background: var(--clay); top: 34px; transform: translateX(-46%) rotate(-1deg); }
+  .mc.c { background: var(--glint); color: var(--ink); top: 70px; transform: translateX(-34%) rotate(6deg); }
+  .proj.pockard:hover .mc.a { transform: translateX(-70%) rotate(-12deg); }
+  .proj.pockard:hover .mc.c { transform: translateX(-26%) rotate(10deg); }
+  .proj.next { border: 2px dashed rgba(31,27,45,0.25); display: flex; flex-direction: column; justify-content: space-between; min-height: 280px; }
+  .proj.next .tag { background: var(--paper-2); color: var(--ink-soft); }
+  .proj.next .tag::before { background: var(--glint); animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 50% { opacity: .3; } }
+  .proj.next h3 { color: var(--ink-soft); }
+  .proj.next .hand { font-size: 24px; color: var(--clay); transform: rotate(-2deg); display: inline-block; }
+
+  /* ---------- now ---------- */
+  .now { display: grid; grid-template-columns: 0.8fr 1.4fr; gap: 64px; }
+  @media (max-width: 880px) { .now { grid-template-columns: 1fr; gap: 24px; } }
+  .now ul { list-style: none; padding: 0; margin: 0; }
+  .now li { display: grid; grid-template-columns: 30px 1fr; gap: 10px; padding: 18px 0; border-bottom: 1px solid var(--line); font-size: 17px; }
+  .now li:first-child { border-top: 1px solid var(--line); }
+  .now li svg { width: 22px; height: 22px; margin-top: 3px; color: var(--clay); }
+  .now li.done svg { color: var(--sage); }
+  .now li.done span { color: var(--ink-soft); text-decoration: line-through; text-decoration-color: rgba(31,27,45,0.35); }
+  .now .stamp { font-family: var(--hand); font-size: 22px; color: var(--ink-soft); margin-top: 16px; display: block; }
+
+  /* ---------- contact ---------- */
+  .contact { text-align: center; position: relative; }
+  .contact h2 { margin: 0 auto 18px; max-width: 16ch; }
+  .contact .lead { margin: 0 auto 40px; }
+  .mail { font-family: var(--serif); font-size: clamp(24px, 4.4vw, 44px); font-weight: 500; text-decoration: none; color: var(--on-ink); position: relative; word-break: break-word; }
+  .mail::after { content: ''; position: absolute; left: 0; right: 0; bottom: -6px; height: 3px; background: var(--glint); border-radius: 2px; transform-origin: left; transition: transform .4s var(--ease); }
+  .mail:hover::after { transform: scaleX(0.4); }
+  .contact .ps { font-family: var(--hand); font-size: 24px; color: var(--glint); margin-top: 36px; display: inline-block; transform: rotate(-1.5deg); }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header" id="top">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="/" aria-label="Glintstack home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><use href="#mark"/></svg>
+      <span class="word">Glintstack</span>
+    </a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#beliefs">What we believe</a></li>
+      <li><a href="#work">Our work</a></li>
+      <li><a class="btn-sm" href="#contact">Say hello</a></li>
+    </ul>
+  </nav>
+</header>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 64 64">
+    <rect x="8" y="9" width="38" height="8" rx="4" fill="none" stroke="currentColor" stroke-opacity=".55" stroke-width="2.6"/>
+    <rect x="16" y="23" width="30" height="8" rx="4" fill="none" stroke="currentColor" stroke-opacity=".55" stroke-width="2.6"/>
+    <rect x="8" y="37" width="46" height="8" rx="4" fill="none" stroke="currentColor" stroke-opacity=".55" stroke-width="2.6"/>
+    <rect x="20" y="51" width="30" height="8" rx="4" fill="#E9A23B"/>
+  </symbol>
+</svg>
+
+<main id="main">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>We stay until every <span class="glint">layer<svg class="underline" viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 14 C 60 4, 140 4, 296 10"/></svg></span> holds — <em>then</em> keep building.</h1>
+        <p class="sub">Glintstack builds software for the everyday problems others overlook — and builds it to last. Careful, honest products: the kind of thing you'd make for yourself, done properly enough to share.</p>
+        <div class="cta-row">
+          <a class="btn btn-ink" href="#about">Get to know us
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4"/></svg>
+          </a>
+          <a class="btn btn-line" href="#work">See what we've made</a>
+        </div>
+      </div>
+      <div class="art" aria-hidden="true">
+        <div class="slab s1"></div>
+        <div class="slab s2"></div>
+        <div class="slab s3"></div>
+        <div class="slab s4"></div>
+        <span class="note n1">the bit you see<br>goes on last
+          <svg viewBox="0 0 54 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M50 4 C 30 6, 12 16, 6 34"/><path d="M2 26 L6 35 L14 30"/></svg>
+        </span>
+        <span class="note n2">↑ the bits nobody sees come first</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT / LETTER -->
+  <section class="paper2" id="about">
+    <div class="wrap letter-grid">
+      <div>
+        <p class="kicker reveal">Hi there —</p>
+        <h2 class="reveal">A few words <em>before</em> the software.</h2>
+        <ul class="facts reveal">
+          <li><b>Where</b> Cape Town, South Africa</li>
+          <li><b>Size</b> Small, on purpose</li>
+          <li><b>Builds</b> Mobile apps &amp; the systems behind them</li>
+          <li><b>Shipped</b> Pockard, with more on the way</li>
+        </ul>
+      </div>
+      <article class="letter reveal">
+        <p class="hello">Hello, and welcome.</p>
+        <p>Glintstack exists because we kept running into small, everyday frustrations that nobody had bothered to solve properly — at least not for people here. So we started building the fixes ourselves.</p>
+        <p>We work end to end: the quiet plumbing underneath — storage, sync, encryption, the integrations no one sees — and the app that ends up in your hand. Whether it's for two people or ten thousand, it gets the same care.</p>
+        <p>We'd rather build fewer things and get them right. Each layer has to hold its weight before the next one goes on top. That's slower, but it's the only way we know how to make something you can actually trust.</p>
+        <p>Thanks for stopping by. If something here resonates — or annoys you — we'd genuinely like to hear about it.</p>
+        <p class="sign">— The Glintstack team<small>Cape Town</small></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- BELIEFS -->
+  <section class="ink" id="beliefs">
+    <div class="wrap">
+      <p class="kicker reveal">What we believe</p>
+      <h2 class="reveal">Three rules every layer <em>has</em> to pass.</h2>
+      <div class="beliefs">
+        <div class="belief reveal">
+          <div class="num">i.</div>
+          <h3>Local-first.</h3>
+          <p>Everything we make is built for the people using it here — their shops, their data bundles, their phones — not adapted from somewhere else after the fact.</p>
+          <span class="aside">Lekker, not generic.</span>
+        </div>
+        <div class="belief reveal">
+          <div class="num">ii.</div>
+          <h3>Privacy by design.</h3>
+          <p>Data protection isn't a checkbox added at the end. It's in the architecture from day one: collect less, encrypt what matters, and make it easy to leave.</p>
+          <span class="aside">Your data is yours. Full stop.</span>
+        </div>
+        <div class="belief reveal">
+          <div class="num">iii.</div>
+          <h3>Unhurried, on purpose.</h3>
+          <p>We'd rather ship something right than ship it fast. No dark patterns, no growth hacks — just software that does its job and gets out of your way.</p>
+          <span class="aside">Slow is smooth, smooth is fast.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="how">
+    <div class="wrap">
+      <p class="kicker reveal">How we make things</p>
+      <h2 class="reveal">Layer by layer, from the ground up.</h2>
+      <p class="lead reveal">Our name is the method. Every product goes up the same way.</p>
+      <div class="steps">
+        <div class="step reveal"><span class="k">first,</span><h3>Start with a real problem.</h3><p>Ideally one we've had ourselves. If we wouldn't use it every week, we don't build it.</p></div>
+        <div class="step reveal"><span class="k">then,</span><h3>Pour the foundations.</h3><p>Security, storage and privacy go in before a single pixel. They're the hardest to fix later, so we don't leave them for later.</p></div>
+        <div class="step reveal"><span class="k">next,</span><h3>Make it feel good.</h3><p>Fast, simple, kind to your battery and your data. The part you touch should feel like it was made by people who care — because it was.</p></div>
+        <div class="step reveal"><span class="k">always,</span><h3>Keep listening.</h3><p>Launch isn't the end. We read every email, and the next layer is shaped by the people using the last one.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="paper2" id="work">
+    <div class="wrap">
+      <p class="kicker reveal">Our work</p>
+      <h2 class="reveal">What's on the stack so far.</h2>
+      <div class="work">
+        <article class="proj pockard reveal" id="pockard">
+          <div>
+            <span class="tag">First shipped · Android</span>
+            <h3>Pockard</h3>
+            <p class="what">A loyalty card wallet for South African shoppers.</p>
+            <p>Every loyalty card you carry — Xtra Savings, Smart Shopper, ClubCard and the rest — in one place on your phone. Works fully offline, no account needed, and card numbers are encrypted on your device.</p>
+            <div class="links">
+              <a href="/pockard/privacy/">Privacy policy</a>
+              <a href="/pockard/delete-account/">Delete your account</a>
+            </div>
+          </div>
+          <div class="mini-cards" aria-hidden="true">
+            <div class="mc a"><span>Groceries</span><i></i></div>
+            <div class="mc b"><span>Pharmacy</span><i></i></div>
+            <div class="mc c"><span>Coffee club</span><i></i></div>
+          </div>
+        </article>
+        <article class="proj next reveal">
+          <div>
+            <span class="tag">In the workshop</span>
+            <h3>Next layer</h3>
+            <p>Pockard is the first thing we've shipped — not the only thing. Something new is taking shape.</p>
+          </div>
+          <span class="hand">no spoilers yet ;)</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOW -->
+  <section id="now">
+    <div class="wrap now">
+      <div>
+        <p class="kicker reveal">Right now</p>
+        <h2 class="reveal">What we're up to.</h2>
+      </div>
+      <div class="reveal">
+        <ul>
+          <li class="done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><span>Building Pockard, end to end</span></li>
+          <li class="done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><span>Putting up this little website</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Getting Pockard onto Google Play</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Sketching the next layer</span></li>
+        </ul>
+        <span class="stamp">last updated October 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="ink contact" id="contact">
+    <div class="wrap">
+      <p class="kicker reveal">Say hello</p>
+      <h2 class="reveal">Pull up a chair. We'd love to <em>hear from you</em>.</h2>
+      <p class="lead reveal">Feedback, ideas, a bug, or just a stack of loyalty cards you want to complain about — a real person reads every message.</p>
+      <a class="mail reveal" href="mailto:hello@glintstack.co.za">hello@glintstack.co.za</a>
+      <div><span class="ps reveal">p.s. yes, an actual human. promise.</span></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="/" aria-label="Glintstack home" style="color:var(--on-ink)">
+          <svg viewBox="0 0 64 64" aria-hidden="true" width="30" height="30"><use href="#mark"/></svg>
+          <span class="word">Glintstack</span>
+        </a>
+        <p>Careful software for everyday problems, built one solid layer at a time.</p>
+        <p class="hand">made with care in Cape Town</p>
+      </div>
+      <div class="foot-links">
+        <div>
+          <h4>Glintstack</h4>
+          <a href="#about">About</a>
+          <a href="#beliefs">What we believe</a>
+          <a href="#work">Our work</a>
+        </div>
+        <div>
+          <h4>Pockard</h4>
+          <a href="/pockard/privacy/">Privacy policy</a>
+          <a href="/pockard/delete-account/">Delete account</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="mailto:hello@glintstack.co.za">hello@glintstack.co.za</a>
+          <span>Cape Town, South Africa</span>
+        </div>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="yr">2026</span> Glintstack (Pty) Ltd</span>
+      <span>This site uses no cookies and no tracking.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var header = document.querySelector('.site-header');
+  var onScroll = function () { header.classList.toggle('scrolled', window.scrollY > 8); };
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+    els.forEach(function (el) { io.observe(el); });
+  } else { els.forEach(function (el) { el.classList.add('in'); }); }
+</script>
+</body>
+</html>
