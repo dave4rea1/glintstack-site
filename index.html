@@ -62,6 +62,43 @@
   .sub { font-size: 18px; line-height: 1.65; color: var(--ink-2); max-width: 54ch; margin: 0 auto 34px; }
   .cta-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
 
+  /* ---------- glint ---------- */
+  /* headline: a light sweeps across the italic line */
+  h1 em.glint {
+    background: linear-gradient(100deg, rgba(28,28,28,.45) 0%, rgba(28,28,28,.45) 42%, #F2B85C 48%, #FFF4DC 50%, #F2B85C 52%, rgba(28,28,28,.45) 58%, rgba(28,28,28,.45) 100%);
+    background-size: 300% 100%; background-position: 100% 0;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    animation: sweep-text 6s ease-in-out 1.2s infinite;
+    padding-right: .08em; /* keeps the italic overhang inside the clip */
+  }
+  @keyframes sweep-text { 0% { background-position: 100% 0; } 28%, 100% { background-position: 0% 0; } }
+
+  /* four-point sparkle */
+  .last { position: relative; white-space: nowrap; }
+  .spark { position: absolute; right: -.42em; top: -.02em; width: .4em; height: .4em; color: var(--accent); pointer-events: none; }
+  .spark svg { width: 100%; height: 100%; animation: twinkle 6s ease-in-out 1.2s infinite; transform-origin: center; opacity: 0; }
+  @keyframes twinkle {
+    0%, 22% { opacity: 0; transform: scale(.2) rotate(0deg); }
+    30% { opacity: 1; transform: scale(1.1) rotate(45deg); }
+    40% { opacity: .9; transform: scale(.85) rotate(90deg); }
+    52%, 100% { opacity: 0; transform: scale(.2) rotate(135deg); }
+  }
+
+  /* background glints on the grid */
+  .glints { position: absolute; inset: 0; pointer-events: none; }
+  .glints i { position: absolute; width: 14px; height: 14px; margin: -7px 0 0 -7px; color: var(--accent); animation: twinkle var(--d, 7s) ease-in-out var(--w, 0s) infinite; opacity: 0; }
+  .glints i svg { width: 100%; height: 100%; }
+  @media (max-width: 700px) { .glints i:nth-child(n+3) { display: none; } }
+
+  /* shine across badge and top layer */
+  .shine { position: relative; overflow: hidden; isolation: isolate; }
+  .shine::after {
+    content: ''; position: absolute; top: 0; bottom: 0; left: -40%; width: 30%; z-index: 1; pointer-events: none;
+    background: linear-gradient(100deg, transparent, rgba(255,255,255,.75), transparent);
+    transform: skewX(-20deg); animation: shine var(--sd, 6s) ease-in-out var(--sw, 1.6s) infinite;
+  }
+  @keyframes shine { 0% { left: -40%; } 25%, 100% { left: 130%; } }
+
   /* hero frame: the stack */
   .frame {
     margin: 64px auto 0; max-width: 980px; border-radius: 28px; padding: 10px;
@@ -231,6 +268,7 @@
     <rect x="8" y="37" width="46" height="8" rx="4" fill="none" stroke="currentColor" stroke-opacity=".5" stroke-width="3"/>
     <rect x="20" y="51" width="30" height="8" rx="4" fill="#E9A23B"/>
   </symbol>
+  <symbol id="spark" viewBox="0 0 24 24"><path d="M12 0c.7 6.2 5.8 11.3 12 12-6.2.7-11.3 5.8-12 12-.7-6.2-5.8-11.3-12-12C6.2 11.3 11.3 6.2 12 0z" fill="currentColor"/></symbol>
   <symbol id="check" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </svg>
 
@@ -252,13 +290,19 @@
 <main id="main">
   <!-- HERO -->
   <div class="hero">
+    <div class="glints" aria-hidden="true">
+      <i style="left:14%;top:22%;--d:7s;--w:.4s"><svg viewBox="0 0 24 24"><use href="#spark"/></svg></i>
+      <i style="left:86%;top:30%;--d:8s;--w:2.6s"><svg viewBox="0 0 24 24"><use href="#spark"/></svg></i>
+      <i style="left:22%;top:62%;--d:9s;--w:4.2s;width:10px;height:10px"><svg viewBox="0 0 24 24"><use href="#spark"/></svg></i>
+      <i style="left:79%;top:58%;--d:7.5s;--w:5.5s;width:10px;height:10px"><svg viewBox="0 0 24 24"><use href="#spark"/></svg></i>
+    </div>
     <div class="wrap">
-      <a class="badge" href="#work">
+      <a class="badge shine" href="#work" style="--sw:3.4s;--sd:7s">
         <span class="b"><svg viewBox="0 0 64 64" aria-hidden="true" style="color:#1C1C1C"><rect x="10" y="12" width="44" height="10" rx="5" fill="currentColor" opacity=".55"/><rect x="10" y="27" width="44" height="10" rx="5" fill="currentColor" opacity=".55"/><rect x="10" y="42" width="44" height="10" rx="5" fill="#fff"/></svg></span>
         First shipped: Pockard
         <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
       </a>
-      <h1>We stay until every layer holds — <em>then keep building</em></h1>
+      <h1>We stay until every layer holds — <em class="glint">then keep <span class="last">building<span class="spark" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#spark"/></svg></span></span></em></h1>
       <p class="sub">Glintstack builds software for the everyday problems others overlook — and builds it to last. Careful, honest products: the kind of thing you'd make for yourself, done properly enough to share.</p>
       <div class="cta-row">
         <a class="btn btn-dark" href="#work">See our work
@@ -275,7 +319,7 @@
             <p>Every product starts from the bottom: security first, then storage and sync, then the product, and only then the interface you touch. Nothing goes on top until the layer below it holds.</p>
           </div>
           <div class="layers" aria-hidden="true">
-            <div class="layer top" style="--i:3"><span class="l"><span class="n">04</span>The bit you touch</span><span class="s">Ships last</span></div>
+            <div class="layer top shine" style="--i:3;--sw:2.2s"><span class="l"><span class="n">04</span>The bit you touch</span><span class="s">Ships last</span></div>
             <div class="layer" style="--i:2"><span class="l"><span class="n">03</span>Product logic</span><span class="s">Holds</span></div>
             <div class="layer" style="--i:1"><span class="l"><span class="n">02</span>Storage &amp; sync</span><span class="s">Holds</span></div>
             <div class="layer" style="--i:0"><span class="l"><span class="n">01</span>Security &amp; privacy</span><span class="s">Holds</span></div>
